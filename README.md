@@ -9,14 +9,14 @@
 vite 的腳本內有包含 typescript 與沒有的版本，詳細可參考 [文件](https://vitejs.dev/guide/) 進行建立。
 
 
-```JSON5
-$ pnpm create vite
+```sh
+pnpm create vite
 ```
 
 npx 官方使用 react-scripts 進行開發，另外有提供初始的模板設定，可參考 [文件](https://create-react-app.dev/)。
 
-```JSON5
-$ npx create-react-app my-app
+```sh
+npx create-react-app my-app
 ```
 
 ---
@@ -34,19 +34,19 @@ https://daisyyyyy0.github.io/eat-share
 
 基礎三套
 
-```JSON5
-$ pnpm install @reduxjs/toolkit react react-dom react-redux react-router-dom
+```sh
+pnpm install @reduxjs/toolkit react react-dom react-redux react-router-dom
 ```
 
 ### react-app-rewired
 
 開發專案時預設使用 react-scripts ，可 react-scripts 已封裝，雖然可以進行 eject 但東西相當多且複雜，故使用 react-app-rewired 更動需要更動的進行開發(start)與打包(build)工作。
 
-```JSON5
-$ pnpm install react-app-rewired
+```sh
+pnpm install react-app-rewired
 ```
 
-```JSON5
+```sh
 "scripts": {
   "start": "react-app-rewired start",
   "build": "react-app-rewired build"
@@ -58,7 +58,7 @@ $ pnpm install react-app-rewired
 
 樣式
 
-```JSON5
+```sh
 pnpm install -D sass windicss
 ```
 
@@ -66,22 +66,22 @@ pnpm install -D sass windicss
 
 還沒加入專案內後面補
 
-```JSON5
-$ pnpm install -D eslint eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react-refresh
+```sh
+pnpm install -D eslint eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react-refresh
 ```
 
 ### typescript
 
 還沒加入專案內後面補
 
-```JSON5
-$ pnpm
+```sh
+pnpm
 ```
 
 ---
 
 ?????文件還未整理的內容?????
-```JSON5
+```sh
 // webpack
 pnpm install -D webpack webpack-cli
 
@@ -89,4 +89,6 @@ pnpm install -D webpack webpack-cli
 pnpm install -D @types/react @types/react-dom
 
 ```
-
+參考資訊
+https://ithelp.ithome.com.tw/articles/10305953
+https://happy9990929.github.io/
