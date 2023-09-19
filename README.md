@@ -84,4 +84,3 @@ pnpm
 pnpm install -D @types/react @types/react-dom
 
 ```
-
