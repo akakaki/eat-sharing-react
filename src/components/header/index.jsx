@@ -22,7 +22,7 @@ export default function Header () {
   return (
     <header className='bg-white shadow-lg'>
       <div className='header__container max-w-[1220px] mx-auto p-[10px] flex items-center justify-between'>
-        <img className='w-[182px]' src={ require('@/assets/images/logo.png') } alt='logo' />
+        <Link to="/"><img className='w-[182px]' src={ require('@/assets/images/logo.png') } alt='logo' /></Link>
         <ViewMenu />
       </div>
     </header>

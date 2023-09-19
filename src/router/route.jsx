@@ -4,6 +4,7 @@ import About from '@/pages/About/index.jsx'
 import News from '@/pages/News/index.jsx'
 import Member from '@/pages/Member/index.jsx'
 import Center from '@/pages/Center/index.jsx'
+import Register from '@/pages/Register/index.jsx'
 
 export default [
   {
@@ -29,6 +30,10 @@ export default [
       {
         path: 'center',
         element: <Center />,
+      },
+      {
+        path: 'register',
+        element: <Register />,
       },
     ]
   },
