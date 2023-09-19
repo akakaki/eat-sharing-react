@@ -53,7 +53,7 @@ function FooterCommunity () {
 function Copyright () {
   return (
     <div className='copyright__wrap bg-[#a1a481]'>
-      <div className='copyright__container max-w-[1220px] mx-auto p-[10px] text-white text-center'>
+      <div className='copyright__container max-w-[1320px] mx-auto p-[10px] text-white text-center'>
         Copyright © 2023 sharefood.com
       </div>
     </div>
@@ -69,7 +69,7 @@ export default function Footer () {
           to="register"
         >立即加入我們！
         </Link>
-        <div className='footer__nav max-w-[1220px] mx-auto p-[10px] flex items-center justify-between'>
+        <div className='footer__nav max-w-[1320px] mx-auto p-[10px] flex items-center justify-between'>
           <FooterMenu />
           <FooterContect />
           <FooterCommunity />

@@ -7,7 +7,7 @@ function ViewMenu () {
     { id: 'member', label: '會員專區' },
     { id: 'center', label: '共餐據點' },
   ].map(item => {
-    return <Link className='ml-[12px] text-[#da7569]' to={ item.id } key={ item.id }>{ item.label }</Link>
+    return <Link className='ml-[18px] text-[#da7569]' to={ item.id } key={ item.id }>{ item.label }</Link>
   })
 
   return (
@@ -20,8 +20,8 @@ function ViewMenu () {
 
 export default function Header () {
   return (
-    <header className='bg-white shadow-lg'>
-      <div className='header__container max-w-[1220px] mx-auto p-[10px] flex items-center justify-between'>
+    <header className='bg-white shadow-md relative'>
+      <div className='header__container max-w-[1320px] mx-auto py-[14px] px-[10px] flex items-center justify-between'>
         <Link to="/"><img className='w-[182px]' src={ require('@/assets/images/logo.png') } alt='logo' /></Link>
         <ViewMenu />
       </div>

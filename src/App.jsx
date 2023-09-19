@@ -6,7 +6,7 @@ export default function App () {
   return (
     <div className='wrap flex flex-col h-full overflow-auto'>
       <ViewHeader />
-      <div className='container flex-1'>
+      <div className='container flex-1 max-w-full'>
         <Outlet />
       </div>
       <ViewFooter />
