@@ -6,6 +6,7 @@
 		"dev": "BROWSER=none react-app-rewired start",
 		"build": "react-app-rewired build"
 	},
+	"homepage": "https://akakaki.github.io/practice-react",
 	"dependencies": {
 		"@reduxjs/toolkit": "^1.9.5",
 		"react": "^18.2.0",
