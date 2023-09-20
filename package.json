@@ -2,7 +2,7 @@
 	"name": "eat-shring-react",
 	"private": true,
 	"version": "0.0.1",
-	"_homepage": "https://akakaki.github.io/practice-react",
+	"homepage": "https://akakaki.github.io/practice-react",
 	"scripts": {
 		"dev": "BROWSER=none react-app-rewired start",
 		"build": "react-app-rewired build"
