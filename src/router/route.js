@@ -5,11 +5,12 @@ import News from '@/pages/News/index.jsx'
 import Member from '@/pages/Member/index.jsx'
 import Center from '@/pages/Center/index.jsx'
 import Register from '@/pages/Register/index.jsx'
+import Error from '@/pages/Error/index.jsx'
 
 export default [
   {
-    path: '/',
     element: <App />,
+    errorElement: <Error />,
     children: [
       {
         path: '/',

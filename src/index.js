@@ -4,7 +4,7 @@ import { createRoot } from 'react-dom/client'
 import { Provider } from 'react-redux'
 import store from '@/store/index.js'
 
-import App from '@/router/index.jsx'
+import App from '@/router/index.js'
 
 import './virtual:windi.css'
 import '@/assets/index.scss'
