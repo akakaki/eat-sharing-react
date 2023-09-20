@@ -1,42 +1,7 @@
-@font-face {
-  font-family: "icomoon";
-  src: url("./font/IcoMoon-Free.ttf");
-}
-
 #root {
   @apply absolute w-full h-full;
 }
 
 a {
   @apply no-underline
-}
-
-.ico-moon {
-  &::before {
-    font-family: "icomoon";
-  }
-
-  &.address::before {
-    content: "\e900";
-  }
-
-  &.phone::before {
-    content: "\e942";
-  }
-
-  &.email::before {
-    content: "\ea85";
-  }
-
-  &.facebook::before {
-    content: "\ea90";
-  }
-
-  &.line::before {
-    content: "\ea8e";
-  }
-
-  &.instagram::before {
-    content: "\ea92";
-  }
 }

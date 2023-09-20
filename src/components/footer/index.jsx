@@ -1,4 +1,7 @@
 import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHome, faPhone, faEnvelope, faComments } from '@fortawesome/free-solid-svg-icons'
+import { faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons'
 
 function FooterMenu () {
   const list = [
@@ -16,12 +19,17 @@ function FooterMenu () {
 
 function FooterContect () {
   const list = [
-    { id: 'address', label: '台中市豐原區中正路127號' },
-    { id: 'phone', label: '02-xxxx-xxxx' },
-    { id: 'email', label: 'sharefood@example.com' },
+    { id: 'address', label: '台中市豐原區中正路127號', icon: faHome },
+    { id: 'phone', label: '02-xxxx-xxxx', icon: faPhone },
+    { id: 'email', label: 'sharefood@example.com', icon: faEnvelope },
   ].map(item => {
-    const target = `ico-moon ${item.id} mb-[14px] before:mr-[8px]`
-    return (<li className={ target } key={ item.id }>{ item.label }</li>)
+    const target = 'mb-[14px]'
+    return (
+      <li className={ target } key={ item.id }>
+        <FontAwesomeIcon icon={ item.icon } className='mr-[10px]' size='lg' />
+        { item.label }
+      </li>
+    )
   })
 
   return (
@@ -34,12 +42,16 @@ function FooterContect () {
 
 function FooterCommunity () {
   const list = [
-    { id: 'facebook', url: '' },
-    { id: 'line', url: '' },
-    { id: 'instagram', url: '' },
+    { id: 'facebook', url: '', icon: faFacebookF },
+    { id: 'line', url: '', icon: faComments },
+    { id: 'instagram', url: '', icon: faInstagram },
   ].map(item => {
-    const target = `ico-moon ${item.id} cursor-pointer before:text-[#da7569] before:text-[24px] bg-white w-[40px] h-[40px] flex items-center justify-center rounded-full`
-    return (<li className={ target } key={ item.id }></li>)
+    const target = `cursor-pointer bg-white w-[40px] h-[40px] flex items-center justify-center rounded-full`
+    return (
+      <li className={ target } key={ item.id }>
+        <FontAwesomeIcon icon={ item.icon } className='text-[#da7569]' size='xl' />
+      </li>
+    )
   })
 
   return (

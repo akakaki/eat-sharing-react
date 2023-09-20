@@ -7,10 +7,11 @@ import Center from '@/pages/Center/index.jsx'
 import Register from '@/pages/Register/index.jsx'
 import Error from '@/pages/Error/index.jsx'
 
-export default [
+import { useRoutes } from 'react-router-dom'
+
+export default () => useRoutes([
   {
     element: <App />,
-    errorElement: <Error />,
     children: [
       {
         path: '/',
@@ -37,5 +38,8 @@ export default [
         element: <Register />,
       },
     ]
+  }, {
+    path: '*',
+    element: <Error />,
   },
-]
+])

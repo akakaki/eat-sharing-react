@@ -7,7 +7,7 @@ function ViewBanner () {
     '每天都不知道晚餐要吃什麼了嗎?',
     '覺得很孤單，想找回和家人一起吃飯的感覺嗎?',
     '你想念媽媽的晚餐嗎？',
-  ].map(item => (<p className='leading-[3]' key={ item.id }>{ item }</p>))
+  ].map((item, index) => (<p className='leading-[3]' key={ index }>{ item }</p>))
 
   return (
     <section className='home-banner__wrap bg-[#f2e4d4] pt-[160px] pb-[480px]'>

@@ -1,14 +1,12 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import route from './route.js'
+import { BrowserRouter } from 'react-router-dom'
+import Routes from './route.js'
 
-const router = createBrowserRouter(route, {
-  basename: process.env.NODE_ENV === 'production'
-    ? '/practice-react'
-    : '/'
-})
+// TODO: https://juejin.cn/post/7185897452862439485
 
 export default function routerProvider () {
   return (
-    <RouterProvider router={ router } />
+    <BrowserRouter basename={ process.env.PUBLIC_URL }>
+      <Routes />
+    </BrowserRouter>
   )
 }
