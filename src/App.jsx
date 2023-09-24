@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom'
-import ViewHeader from '@/components/header/index.jsx'
-import ViewFooter from '@/components/footer/index.jsx'
+import ViewHeader from '@/components/Header/index.jsx'
+import ViewFooter from '@/components/Footer/index.jsx'
 
 export default function App () {
   return (

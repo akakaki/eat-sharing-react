@@ -5,7 +5,6 @@ pnpm-debug.log*
 
 # director
 node_modules
-dist
 build
 
 # file

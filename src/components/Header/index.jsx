@@ -22,7 +22,7 @@ function ViewMenu () {
 
 export default function Header () {
   return (
-    <header className='bg-white shadow-md relative'>
+    <header className='bg-white shadow-md relative sticky top-0 z-20'>
       <div className='header__container max-w-[1320px] mx-auto py-[14px] px-[10px] flex items-center'>
         <Link to="/"><img className='w-[182px]' src={ require('@/assets/images/logo.png') } alt='logo' /></Link>
         <ViewMenu />

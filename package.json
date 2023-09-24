@@ -5,7 +5,7 @@
 	"_homepage": "https://akakaki.github.io/practice-react",
 	"scripts": {
 		"dev": "BROWSER=none react-app-rewired start",
-		"build": "PUBLIC_URL=/practice-react react-app-rewired build"
+		"build": "rm -rf ./build && PUBLIC_URL=/eat-sharing-react react-app-rewired build"
 	},
 	"dependencies": {
 		"@fortawesome/free-brands-svg-icons": "^6.4.2",
