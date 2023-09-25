@@ -5,7 +5,7 @@ import ViewBanner from './banner.jsx'
 import ViewPain from './pain.jsx'
 import ViewBelief from './belief.jsx'
 import ViewChoice from './choice.jsx'
-import ViewNews from './news.jsx'
+import ViewInfo from './info.jsx'
 import ViewProcess from './process.jsx'
 import ViewIntro from './intro.jsx'
 import ViewPartner from './partner.jsx'
@@ -23,7 +23,7 @@ export default function Home () {
         <ViewPain />
         <ViewBelief />
         <ViewChoice />
-        <ViewNews />
+        <ViewInfo />
         <ViewProcess />
         <ViewIntro />
         <ViewPartner />
