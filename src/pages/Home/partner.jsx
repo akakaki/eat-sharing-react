@@ -18,7 +18,7 @@ export default function partner () {
         >{ item.label }</div>
         <p className='partner__text flex flex-col items-center leading-10 mt-[24px] mb-[50px]'>
           <span>已累積</span>
-          <span className='partner__count'>{ item.count }間</span>
+          <span className='partner__count'>{ item.count } 間</span>
         </p>
 
       </li>
@@ -28,7 +28,7 @@ export default function partner () {
   return (
     <section className='partner__wrap bg-[#f2e4d4]'>
       <div className='partner__container max-w-[1320px] mx-auto py-[60px] px-[10px]'>
-        <h2 className='text-[36px] text-center font-bold'>我們的夥伴</h2>
+        <h2 className='text-[36px] text-center font-bold tracking-wide'>我們的夥伴</h2>
         <ul className='flex justify-center py-[80px]'>{ target }</ul>
       </div>
     </section>

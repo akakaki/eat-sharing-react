@@ -9,13 +9,13 @@ function ViewMenu () {
     { id: 'member', label: '會員專區' },
     { id: 'center', label: '共餐據點' },
   ].map(item => {
-    return <Link className='ml-[18px] text-[#da7569]' to={ item.id } key={ item.id }>{ item.label }</Link>
+    return <Link className='ml-[34px] text-[#da7569]' to={ item.id } key={ item.id }>{ item.label }</Link>
   })
 
   return (
     <div className='ml-auto'>
       { list }
-      <Link className='ml-[18px]' to="/member"><FontAwesomeIcon className='text-[#da7569]' icon={ faUser } size="lg" /></Link>
+      <Link className='ml-[34px]' to="/member"><FontAwesomeIcon className='text-[#da7569]' icon={ faUser } size="lg" /></Link>
     </div>
   )
 }

@@ -4,7 +4,7 @@ export default function banner () {
     '每天都不知道晚餐要吃什麼了嗎?',
     '覺得很孤單，想找回和家人一起吃飯的感覺嗎?',
     '你想念媽媽的晚餐嗎？',
-  ].map((item, index) => (<p className='leading-[3]' key={ index }>{ item }</p>))
+  ].map((item, index) => (<span className='leading-[3] block' key={ index }>{ item }</span>))
 
   return (
     <section className='banner__wrap bg-[#f2e4d4] pt-[160px] pb-[480px]'>
@@ -12,9 +12,9 @@ export default function banner () {
         <img className='w-[196px] absolute top-0 left-[120px] transform -rotate-24' src={ require('./images/banner1.png') } alt="" />
         <img className='w-[140px] absolute top-[-20px] right-[180px] transform rotate-20' src={ require('./images/banner2.png') } alt="" />
         <img className='w-[100px] absolute bottom-0 right-[240px] transform -rotate-12' src={ require('./images/banner3.png') } alt="" />
-        <article className='text-center text-[#555] text-[20px]'>
+        <h1 className='text-center text-[#555] text-[20px]'>
           { target }
-        </article>
+        </h1>
       </div>
     </section>
   )

@@ -23,7 +23,7 @@ export default function intro () {
           className={ `border-[4px] bg-white rounded-[4px] p-[20px] ${ index % 2 ? 'mr-[40px]' : 'ml-[40px]' }` }
           style={{ borderColor: item.color }}>
           <h3 className='text-[28px] font-bold mb-[12px]'>{ item.label }</h3>
-          <p className='text-[24px] leading-10'>{ item.text }</p>
+          <p className='text-[24px] leading-10 tracking-wide'>{ item.text }</p>
           <div className='flex items-center justify-between mt-[16px]'>          
             <ul className='flex items-center'>
               { timeList }
@@ -41,7 +41,7 @@ export default function intro () {
   return (
     <section className='intro__wrap bg-[#f2e4d4]'>
       <div className='intro__container max-w-[1320px] mx-auto py-[60px] px-[10px]'>
-        <h2 className='text-[36px] text-center font-bold mb-[60px]'>商家介紹</h2>
+        <h2 className='text-[36px] text-center font-bold mb-[60px] tracking-wide'>商家介紹</h2>
         <ul>
           { target }
         </ul>
