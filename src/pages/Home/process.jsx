@@ -10,7 +10,7 @@ export default function process () {
     { id: 4, label: '選擇現金<br>或綁定金流付款', img: require('./images/step5.png') },
   ].map((item, index, arr) => {
     return (
-      <li className='relative'>
+      <li className='relative' key={ item.id }>
         <i className='absolute top-0 left-0 transform -translate-x-1/2 -translate-y-1/2 z-10 text-[160px] text-[#f2e4d4] font-bold not-italic'>{ index + 1 }</i>
         <img
           src={ item.img }

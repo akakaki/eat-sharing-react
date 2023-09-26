@@ -15,7 +15,7 @@ export default function intro () {
         key={ item.id }
       >
         <img
-          className='w-[250px] shrink-0'
+          className='w-[250px] shrink-0 block'
           src={ item.img }
           alt={ item.label }
         />

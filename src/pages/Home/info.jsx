@@ -24,13 +24,15 @@ function News () {
       <div className='news__container p-[24px] relative'>
         <h2 className='absolute top-[-40px] left-[24px] bg-[#eec7ae] font-bold text-[24px] w-[80px] py-[20px] px-[10px] text-center tracking-wide'>最新消息</h2>
         <table className='text-[24px] w-full'>
-          <tr className='border-b-[1px] border-[#da7569]'>
-            <th className=''></th>
-            <th className='pb-[10px]'>發布時間</th>
-            <th className='pb-[10px]'>標題</th>
-            <th className='pb-[10px]'>點閱人數</th>
-          </tr>
-          { target }
+          <tbody>
+            <tr className='border-b-[1px] border-[#da7569]'>
+              <th className=''></th>
+              <th className='pb-[10px]'>發布時間</th>
+              <th className='pb-[10px]'>標題</th>
+              <th className='pb-[10px]'>點閱人數</th>
+            </tr>
+            { target }
+          </tbody>
         </table>
       </div>
     </article>
@@ -43,7 +45,7 @@ function Banner () {
     { id: 2, label: '新鮮食材在這裡', color: '#e0ab77', img: require('./images/swiper-vegetable.jpg') },
   ].map(item => {
     return (
-      <SwiperSlide>
+      <SwiperSlide key={ item.id }>
         <img 
           className='h-full w-full object-cover object-center h-[285px]'
           src={ item.img }
@@ -108,7 +110,10 @@ function Team () {
     { id: 3, name: 'Daisy', img: require('./images/member-pic4.png') },
   ].map(item => {
     return (
-      <li className='inline-flex flex-col items-center justify-center mx-[12px]'>
+      <li
+        className='inline-flex flex-col items-center justify-center mx-[12px]'
+        key={ item.id }
+      >
         <img
           className='w-[150px] mb-[8px]'
           src={ item.img }
