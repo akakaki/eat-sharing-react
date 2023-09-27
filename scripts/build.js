@@ -2,7 +2,6 @@
 // https://juejin.cn/post/6844904047602860046
 
 const fs = require('fs')
-const map = require('../src/router/route.js')
 
 fs.cp('./build/index.html', './build/404.html', (err) => {
   if (err === null) return false
