@@ -15,20 +15,13 @@ function ViewMenu () {
     return <Link className='ml-[34px] text-[#da7569]' to={ item.id } key={ item.id }>{ item.label }</Link>
   })
 
-  if (isMobile) {
-    return (
-      <div className='ml-auto'>
-        <Link className='ml-[34px]' to="/member"><FontAwesomeIcon className='text-[#da7569]' icon={ faUser } size="lg" /></Link>
-      </div>
-    )
-  } else {
-    return (
-      <div className='ml-auto'>
-        { list }
-        <Link className='ml-[34px]' to="/member"><FontAwesomeIcon className='text-[#da7569]' icon={ faUser } size="lg" /></Link>
-      </div>
-    )
-  }
+
+  return (
+    <div className='ml-auto'>
+      { !isMobile && list }
+      <Link className='ml-[34px]' to="/member"><FontAwesomeIcon className='text-[#da7569]' icon={ faUser } size="lg" /></Link>
+    </div>
+  )
 }
 
 export default function Header () {
