@@ -1,28 +1,25 @@
+import { createSlice, configureStore } from '@reduxjs/toolkit'
 
-import { configureStore, createSlice } from '@reduxjs/toolkit'
+const initialState = {
+  isMobile: true,
+}
 
-// https://redux.js.org/tutorials/quick-start
-
-const counterSlice = createSlice({
-  name: 'counter',
-  initialState: {
-    value: 123123,
+const reducers = {
+  setMobileValue: (state, action) => {
+    state.isMobile = action.payload
   },
-  reducers: {
-    increment: state => {
-      state.value += 1
-    },
+}
 
-    incrementCount: (state, action) => {
-      state.value += action.payload
-    },
-  }
+const store = createSlice({
+  name: 'store',
+  initialState,
+  reducers,
 })
 
-export const { increment, incrementCount } = counterSlice.actions
+export const { setMobileValue } = store.actions
 
 export default configureStore ({
   reducer: {
-    counter: counterSlice.reducer,
+    store: store.reducer,
   },
 })
