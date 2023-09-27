@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { useSelector } from 'react-redux'
 
 function ViewMenu () {
+  const isMobile = useSelector(state => state.store.isMobile)
+
   const list = [
     { id: 'about', label: '關於我們' },
     { id: 'news', label: '最新消息' },
@@ -12,12 +15,20 @@ function ViewMenu () {
     return <Link className='ml-[34px] text-[#da7569]' to={ item.id } key={ item.id }>{ item.label }</Link>
   })
 
-  return (
-    <div className='ml-auto'>
-      { list }
-      <Link className='ml-[34px]' to="/member"><FontAwesomeIcon className='text-[#da7569]' icon={ faUser } size="lg" /></Link>
-    </div>
-  )
+  if (isMobile) {
+    return (
+      <div className='ml-auto'>
+        <Link className='ml-[34px]' to="/member"><FontAwesomeIcon className='text-[#da7569]' icon={ faUser } size="lg" /></Link>
+      </div>
+    )
+  } else {
+    return (
+      <div className='ml-auto'>
+        { list }
+        <Link className='ml-[34px]' to="/member"><FontAwesomeIcon className='text-[#da7569]' icon={ faUser } size="lg" /></Link>
+      </div>
+    )
+  }
 }
 
 export default function Header () {

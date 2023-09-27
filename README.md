@@ -4,8 +4,9 @@
 
 ## 代辦
 
-1. route 設定變數
+1. router 寫入登入狀態
 2. style 寫入 hover 行為
+3. 接入 firebase 或 notion
 
 ## 相關文件與專案走向
 

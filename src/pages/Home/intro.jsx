@@ -1,7 +1,10 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
+import { useSelector } from 'react-redux'
 
 export default function intro () {
+  const isMobile = useSelector(state => state.store.isMobile)
+
   const target = [
     { id: 1, label: '台北市內湖區', color: '#a1a481',  text: '胡小姐已有中餐證照也對中式麵食及有興趣。天然不過分的調味，也自己手工臘肉、油蔥醬等。 每星期一、四、五，等你來搭伙！', img: require('./images/shop1-pic.png'), time: [17, 18, 19, 20] },
     { id: 2, label: '新北市新店區', color: '#bc7c96',  text: 'Gina平日開伙，每天採購的新鮮食材決定當日料理，目前提供外帶餐盒方式，拿到即可食用。（木薯炒雞肉看起來好好吃', img: require('./images/shop2-pic.png'), time: [12, 17, 18, 19, 20] },
@@ -11,7 +14,7 @@ export default function intro () {
 
     return (
       <li
-        className={ `flex items-center mb-[40px] ${ index % 2 ? 'flex-row-reverse' : 'flex-row' }` }
+        className={ `flex items-center mb-[40px] ${ isMobile ? 'flex-col' : index % 2 ? 'flex-row-reverse' : 'flex-row' }` }
         key={ item.id }
       >
         <img
@@ -20,12 +23,12 @@ export default function intro () {
           alt={ item.label }
         />
         <div
-          className={ `border-[4px] bg-white rounded-[4px] p-[20px] ${ index % 2 ? 'mr-[40px]' : 'ml-[40px]' }` }
+          className={ `border-[4px] bg-white rounded-[4px] ${ !isMobile && 'p-[20px]' && (index % 2 ? 'mr-[40px]' : 'ml-[40px]') }` }
           style={{ borderColor: item.color }}>
           <h3 className='text-[28px] font-bold mb-[12px]'>{ item.label }</h3>
           <p className='text-[24px] leading-10 tracking-wide'>{ item.text }</p>
-          <div className='flex items-center justify-between mt-[16px]'>          
-            <ul className='flex items-center'>
+          <div className={ `flex items-center justify-between mt-[16px] ${ isMobile && 'flex-col' }` }>          
+            <ul className={ `flex items-center ${ isMobile && 'flex-wrap' }` }>
               { timeList }
             </ul>
             <div className='cursor-pointer text-[#da7569]'>

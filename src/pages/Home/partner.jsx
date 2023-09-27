@@ -1,4 +1,8 @@
+import { useSelector } from 'react-redux'
+
 export default function partner () {
+  const isMobile = useSelector(state => state.store.isMobile)
+
   const target = [
     { id: 'taipei', label: '台北市', count: 11, color: '#da7569' },
     { id: 'new-taipei', label: '新北市', count: 11, color: '#a1a481' },
@@ -9,7 +13,7 @@ export default function partner () {
     return (
       <li
         key={ item.id }
-        className='border-[4px] text-[20px] flex flex-col items-center justify-center w-[150px] mx-[8px]'
+        className={ `border-[4px] text-[20px] flex flex-col items-center justify-center mx-[8px] ${ isMobile ? 'w-full' : 'w-[150px]' }` }
         style={{ borderColor: item.color }}
       >
         <div
@@ -29,7 +33,7 @@ export default function partner () {
     <section className='partner__wrap bg-[#f2e4d4]'>
       <div className='partner__container max-w-[1320px] mx-auto py-[60px] px-[10px]'>
         <h2 className='text-[36px] text-center font-bold tracking-wide'>我們的夥伴</h2>
-        <ul className='flex justify-center py-[80px]'>{ target }</ul>
+        <ul className={ `py-[80px] ${ isMobile ? 'grid grid-cols-2 gap-y-[20px] gap-x-[10px]' : 'flex justify-center' }` }>{ target }</ul>
       </div>
     </section>
   )

@@ -2,22 +2,29 @@ import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome, faPhone, faEnvelope, faComments } from '@fortawesome/free-solid-svg-icons'
 import { faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons'
+import { useSelector } from 'react-redux'
 
 function FooterMenu () {
+  const isMobile = useSelector(state => state.store.isMobile)
+
   const list = [
     { id: 'help', label: '幫助' },
     { id: 'manual', label: '使用手冊' },
     { id: 'translation', label: '常見問題' },
     { id: 'community', label: '社群守則' },
     { id: 'privacy', label: '隱私條款' },
-  ].map(item => (<li className='mb-[14px] text-white cursor-pointer hover:underline' key={ item.id }>{ item.label }</li>))
+  ].map(item => (<li className={ `text-white cursor-pointer hover:underline ${ isMobile ? 'mr-[20px]' : 'mb-[14px] ' }` } key={ item.id }>{ item.label }</li>))
 
   return (
-    <ul>{ list }</ul>
+    <ul
+      className={ `${ isMobile && 'flex flex-wrap mb-[14px] w-full' }` }
+    >{ list }</ul>
   )
 }
 
 function FooterContect () {
+  const isMobile = useSelector(state => state.store.isMobile)
+
   const list = [
     { id: 'address', label: '台中市豐原區中正路127號', icon: faHome },
     { id: 'phone', label: '02-xxxx-xxxx', icon: faPhone },
@@ -33,7 +40,7 @@ function FooterContect () {
   })
 
   return (
-    <div className='Footer-contect__container text-white'>
+    <div className={ `Footer-contect__container text-white ${ isMobile && 'w-full' }` }>
       <div className='font-bold text-[16px] mb-[20px]'>聯絡我們</div>
       <ul>{ list }</ul>
     </div>
@@ -73,15 +80,19 @@ function Copyright () {
 }
 
 export default function Footer () {
+  const isMobile = useSelector(state => state.store.isMobile)
+
   return (
     <footer className='bg-[#da7569]'>
       <div className='footer__container'>
         <Link
-          className='max-w-full w-[800px] relative block bg-[#bc7c96] text-[48px] font-bold rounded-full text-white p-[50px] text-center mx-auto transform -translate-y-1/2 shadow-lg -mb-[40px]'
+          className={ `max-w-full relative block bg-[#bc7c96] font-bold rounded-full text-white text-center mx-auto transform -translate-y-1/2 shadow-lg ${ isMobile ? 'text-[16px] p-[20px] mx-[10px]' : 'text-[48px] p-[50px] w-[800px] -mb-[40px]' }` }
           to="register"
         >立即加入我們！
         </Link>
-        <div className='footer__nav max-w-[1320px] mx-auto p-[10px] flex items-center justify-between'>
+        <div
+          className={ `footer__nav max-w-[1320px] mx-auto p-[10px] flex items-center justify-between ${isMobile && 'flex-col'}` }
+        >
           <FooterMenu />
           <FooterContect />
           <FooterCommunity />

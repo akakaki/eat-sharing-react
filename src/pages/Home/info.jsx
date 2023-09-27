@@ -1,7 +1,10 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
+import { useSelector } from 'react-redux'
 
 function News () {
+  const isMobile = useSelector(state => state.store.isMobile)
+
   const target = [
     { id: 1, time: '2022-01-10', label: '共餐平台網站建立', people: 600 },
     { id: 2, time: '2022-01-09', label: '[徵求開伙人&搭伙人]', people: 1262 },
@@ -20,7 +23,7 @@ function News () {
   })
 
   return (
-    <article className='news__wrap bg-[#efc4c4] bg-opacity-50 col-span-2'>
+    <article className={ `news__wrap bg-[#efc4c4] bg-opacity-50 ${ !isMobile && 'col-span-2'  }` }>
       <div className='news__container p-[24px] relative'>
         <h2 className='absolute top-[-40px] left-[24px] bg-[#eec7ae] font-bold text-[24px] w-[80px] py-[20px] px-[10px] text-center tracking-wide'>最新消息</h2>
         <table className='text-[24px] w-full'>
@@ -103,6 +106,8 @@ function Fee () {
 }
 
 function Team () {
+  const isMobile = useSelector(state => state.store.isMobile)
+
   const target = [
     { id: 0, name: 'Mason', img: require('./images/member-pic1.png') },
     { id: 1, name: 'Aston', img: require('./images/member-pic2.png') },
@@ -125,7 +130,7 @@ function Team () {
   })
 
   return (
-    <article className='team__wrap bg-[#eec7ae] col-span-2'>
+    <article className={ `team__wrap bg-[#eec7ae] ${ isMobile && 'col-span-2' }` }>
       <div className='team__container flex flex-col items-center justify-center p-[20px]'>
         <h2 className='team__title text-[24px] bg-[#e8dbcc] font-bold py-[8px] px-[20px] mb-[12px] tracking-wide'>團隊介紹</h2>
         <ul className='flex items-center'>
@@ -137,10 +142,12 @@ function Team () {
 }
 
 export default function ViewNews () {
+  const isMobile = useSelector(state => state.store.isMobile)
+
   return (
     <section className='info__wrap bg-[#f2e4d4]'>
       <div
-        className='info__container max-w-[1320px] mx-auto py-[60px] px-[10px] grid grid-cols-3 gap-[20px]'
+        className={ `info__container max-w-[1320px] mx-auto py-[60px] px-[10px] ${ isMobile ? '' : 'grid gap-[20px] grid-cols-3' }` }
       >
         <News />
         <Banner />

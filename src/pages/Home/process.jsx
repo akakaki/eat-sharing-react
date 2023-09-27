@@ -1,7 +1,10 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretRight } from '@fortawesome/free-solid-svg-icons'
+import { useSelector } from 'react-redux'
 
 export default function process () {
+  const isMobile = useSelector(state => state.store.isMobile)
+
   const target = [
     { id: 0, label: '註冊會員<br>填寫基本資料', img: require('./images/step1.png') },
     { id: 1, label: '登入會員<br>啟動後臺', img: require('./images/step2.png') },
@@ -33,7 +36,7 @@ export default function process () {
     <section className='process__wrap bg-cover bg-no-repeat bg-center relative z-0' style={{ backgroundImage: `url(${require('./images/index_bg.png')})` }}>
       <div className='process__container max-w-[1320px] mx-auto pt-[80px] pb-[120px] px-[10px]'>
         <h2 className='text-[36px] text-center font-bold mb-[60px] tracking-wide'>使用流程</h2>
-        <ul className='flex items-center justify-between'>
+        <ul className={ `flex items-center justify-between ${ isMobile && 'flex-col' }` }>
           { target }
         </ul>
       </div>
