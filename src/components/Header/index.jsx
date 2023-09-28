@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, NavLink} from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { useSelector } from 'react-redux'
@@ -12,7 +12,10 @@ function ViewMenu () {
     { id: 'member', label: '會員專區' },
     { id: 'center', label: '共餐據點' },
   ].map(item => {
-    return <Link className='ml-[34px] text-[#da7569]' to={ item.id } key={ item.id }>{ item.label }</Link>
+    return (<NavLink
+      className={ ({ isActive }) => `ml-[34px] ${ isActive ? 'font-bold text-[#975047]' : 'text-[#da7569]' }` }
+      to={ item.id }
+      key={ item.id }>{ item.label }</NavLink>)
   })
 
 

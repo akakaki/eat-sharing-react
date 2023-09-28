@@ -35,7 +35,7 @@ export default function App () {
   init()
 
   return (
-    <div className='wrap flex flex-col h-full overflow-auto'>
+    <div className='wrap flex flex-col h-full overflow-y-auto overflow-x-hidden'>
       <LoginContext.Provider value={{ loginStatus, setLoginStatus }}>
         <ViewHeader />
         <div className='container flex-1 max-w-full'>
