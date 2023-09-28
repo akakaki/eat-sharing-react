@@ -1,12 +1,16 @@
+import { createContext, useState } from 'react'
 import { Outlet } from 'react-router-dom'
 import ViewHeader from '@/components/Header/index.jsx'
 import ViewFooter from '@/components/Footer/index.jsx'
 
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { setMobileValue } from '@/store/index.js'
 import { debounce } from '@/utils/index.js'
 
+export const LoginContext = createContext()
+
 export default function App () {
+  const [ loginStatus, setLoginStatus ] = useState(false)
   const dispatch = useDispatch()
 
   // isMobile =">
@@ -32,11 +36,13 @@ export default function App () {
 
   return (
     <div className='wrap flex flex-col h-full overflow-auto'>
-      <ViewHeader />
-      <div className='container flex-1 max-w-full'>
-        <Outlet />
-      </div>
-      <ViewFooter />
+      <LoginContext.Provider value={{ loginStatus, setLoginStatus }}>
+        <ViewHeader />
+        <div className='container flex-1 max-w-full'>
+          <Outlet />
+        </div>
+        <ViewFooter />
+      </LoginContext.Provider>
     </div>
   )
 }

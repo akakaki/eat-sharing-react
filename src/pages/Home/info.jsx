@@ -130,7 +130,7 @@ function Team () {
   })
 
   return (
-    <article className={ `team__wrap bg-[#eec7ae] ${ isMobile && 'col-span-2' }` }>
+    <article className={ `team__wrap bg-[#eec7ae] ${ !isMobile && 'col-span-2' }` }>
       <div className='team__container flex flex-col items-center justify-center p-[20px]'>
         <h2 className='team__title text-[24px] bg-[#e8dbcc] font-bold py-[8px] px-[20px] mb-[12px] tracking-wide'>團隊介紹</h2>
         <ul className='flex items-center'>
@@ -147,7 +147,7 @@ export default function ViewNews () {
   return (
     <section className='info__wrap bg-[#f2e4d4]'>
       <div
-        className={ `info__container max-w-[1320px] mx-auto py-[60px] px-[10px] ${ isMobile ? '' : 'grid gap-[20px] grid-cols-3' }` }
+        className={ `info__container max-w-[1320px] mx-auto py-[60px] px-[10px] ${ !isMobile && 'grid gap-[20px] grid-cols-3' }` }
       >
         <News />
         <Banner />

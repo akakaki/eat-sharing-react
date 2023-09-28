@@ -23,7 +23,7 @@ export default function intro () {
           alt={ item.label }
         />
         <div
-          className={ `border-[4px] bg-white rounded-[4px] ${ !isMobile && 'p-[20px]' && (index % 2 ? 'mr-[40px]' : 'ml-[40px]') }` }
+          className={ `border-[4px] bg-white rounded-[4px] ${ isMobile ? 'p-[10px]' : 'p-[20px]' } ${ !isMobile && (index % 2 ? 'mr-[40px]' : 'ml-[40px]') }` }
           style={{ borderColor: item.color }}>
           <h3 className='text-[28px] font-bold mb-[12px]'>{ item.label }</h3>
           <p className='text-[24px] leading-10 tracking-wide'>{ item.text }</p>
