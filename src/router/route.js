@@ -7,29 +7,24 @@ import Center from '@/pages/Center/index.jsx'
 import Register from '@/pages/Register/index.jsx'
 import Error from '@/pages/Error/index.jsx'
 
-import { useRoutes, useNavigate } from 'react-router-dom'
-import { useContext, useEffect } from 'react'
+import { createBrowserRouter, redirect } from 'react-router-dom'
 
 const isLogin = true
 
-function BeforeRoute ({ children, meta, path }) {
-  const { loginStatus } = useContext(LoginContext)
-
+async function BeforeRoute (handle) {
+  // await new Promise((resolve) => {
+  //   setTimeout(() => { resolve() }, 4000)
+  // })
   const title = `一起吃飯 EatSharing`
-  document.title = meta?.title ? `${title} - ${ meta.title }` : title
-  
-  const navigate = useNavigate()
-  useEffect(() => {
-    // login auth
-    if (meta?.isLogin && !loginStatus) navigate('/')
-  }, [path])
+  document.title = handle?.title ? `${title} - ${ handle.title }` : title
 
-
-  return (<>{ children }</>)
+  if (handle?.isLogin) return redirect('/')
+  return false
 }
 
 const route = [
   {
+    path: '/',
     element: <App />,
     children: [
       {
@@ -39,37 +34,42 @@ const route = [
       {
         path: 'about',
         element: <About />,
-        meta: { title: '關於我們' }
+        handle: { title: '關於我們' },
       },
       {
         path: 'news',
         element: <News />,
-        meta: { title: '最新消息' }
+        handle: { title: '最新消息' },
       },
       {
         path: 'member',
         element: <Member />,
-        meta: { title: '會員專區', isLogin }
+        handle: { title: '會員專區', isLogin },
       },
       {
         path: 'center',
         element: <Center />,
-        meta: { title: '共餐據點' }
+        handle: { title: '共餐據點' },
       },
       {
         path: 'register',
         element: <Register />,
-        meta: { title: '註冊' }
+        handle: { title: '註冊' },
       },
     ]
-  }, {
+  },
+  {
     path: '*',
     element: <Error />,
+    handle: { title: 'Oops!' }
   },
-].map(item => {
-  if (item.children) for (const sub of item.children) sub.element = (<BeforeRoute path={ sub.path } meta={ sub.meta }>{ sub.element }</BeforeRoute>)
-  else item.element = (<BeforeRoute path={ item.path } meta={ item.meta }>{ item.element }</BeforeRoute>)
-  return item
-})
+]
+  .map(item => {
+    if (item.children) for (const sub of item.children) sub.loader = () => BeforeRoute(sub.handle)
+    else item.loader = () => BeforeRoute(item.handle)
+    return item
+  })
 
-export default () => useRoutes(route)
+export default createBrowserRouter(route, {
+  basename: process.env.PUBLIC_URL,
+})

@@ -1,10 +1,8 @@
-import { BrowserRouter } from 'react-router-dom'
-import Routes from './route.js'
+import { RouterProvider } from 'react-router-dom'
+import routes from './route.js'
 
 export default function routerProvider () {
   return (
-    <BrowserRouter basename={ process.env.PUBLIC_URL }>
-      <Routes />
-    </BrowserRouter>
+    <RouterProvider router={ routes } />
   )
 }
