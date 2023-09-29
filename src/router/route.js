@@ -6,6 +6,7 @@ import NewsDetail from '@/pages/News/detail.jsx'
 import Member from '@/pages/Member/index.jsx'
 import Center from '@/pages/Center/index.jsx'
 import Sign from '@/pages/Sign/index.jsx'
+import Serve from '@/pages/Serve/index.jsx'
 import Error from '@/pages/Error/index.jsx'
 
 import { createBrowserRouter, redirect, Location } from 'react-router-dom'
@@ -62,6 +63,10 @@ const route = [
         path: 'sign',
         element: <Sign />,
         handle: { title: '註冊' },
+      },
+      {
+        path: 'serve/:id',
+        element: <Serve />,
       },
     ]
   },

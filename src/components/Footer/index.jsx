@@ -13,12 +13,20 @@ function FooterMenu () {
     { id: 'translation', label: '常見問題' },
     { id: 'community', label: '社群守則' },
     { id: 'privacy', label: '隱私條款' },
-  ].map(item => (<li className={ `text-white cursor-pointer hover:underline ${ isMobile ? 'mr-[20px]' : 'mb-[14px] ' }` } key={ item.id }>{ item.label }</li>))
+  ].map(item => (
+    <Link
+      className={ `block text-white hover:underline ${ isMobile ? 'mr-[20px]' : 'mb-[14px] ' }` }
+      key={ item.id }
+      to={ `/serve/${item.id}` }
+    >
+      { item.label }
+    </Link>)
+  )
 
   return (
-    <ul
+    <aside
       className={ `${ isMobile && 'flex flex-wrap mb-[14px] w-full' }` }
-    >{ list }</ul>
+    >{ list }</aside>
   )
 }
 
