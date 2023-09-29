@@ -14,7 +14,7 @@ export default function pain () {
 
   return (
     <section className='pain__wrap bg-[#f2e4d4]'>
-      <div className='pain__container max-w-[1320px] mx-auto py-[20px] px-[10px]'>
+      <div className='pain__container max-w-[1220px] mx-auto py-[20px] px-[10px]'>
         <div className={ `pain__list grid gap-[30px] ${ isMobile ? 'grid-rows-2' : 'grid-cols-2' }` }>
           { target }
         </div>

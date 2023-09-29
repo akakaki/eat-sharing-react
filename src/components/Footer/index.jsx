@@ -72,7 +72,7 @@ function FooterCommunity () {
 function Copyright () {
   return (
     <div className='copyright__wrap bg-[#a1a481]'>
-      <div className='copyright__container max-w-[1320px] mx-auto p-[10px] text-white text-center'>
+      <div className='copyright__container max-w-[1220px] mx-auto p-[10px] text-white text-center'>
         Copyright © 2023 sharefood.com
       </div>
     </div>
@@ -80,18 +80,22 @@ function Copyright () {
 }
 
 export default function Footer () {
+  const info = useSelector(state => state.store.info)
   const isMobile = useSelector(state => state.store.isMobile)
 
   return (
     <footer className='bg-[#da7569]'>
       <div className='footer__container'>
-        <Link
-          className={ `max-w-full relative block bg-[#bc7c96] font-bold rounded-full text-white text-center mx-auto transform -translate-y-1/2 shadow-lg ${ isMobile ? 'text-[16px] p-[20px] mx-[10px]' : 'text-[48px] p-[50px] w-[800px] -mb-[40px]' }` }
-          to="register"
-        >立即加入我們！
-        </Link>
+        {
+          !Object.keys(info).length &&
+            <Link
+              className={ `max-w-full relative block bg-[#bc7c96] font-bold rounded-full text-white text-center mx-auto transform -translate-y-1/2 shadow-lg ${ isMobile ? 'text-[16px] p-[20px] mx-[10px]' : 'text-[48px] p-[50px] w-[800px] -mb-[40px]' }` }
+              to="register"
+            >立即加入我們！
+            </Link>
+        }
         <div
-          className={ `footer__nav max-w-[1320px] mx-auto p-[10px] flex items-center justify-between ${isMobile && 'flex-col'}` }
+          className={ `footer__nav max-w-[1220px] mx-auto p-[10px] flex items-center justify-between ${isMobile && 'flex-col'}` }
         >
           <FooterMenu />
           <FooterContect />

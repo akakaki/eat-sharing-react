@@ -1,23 +1,21 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import { useSelector } from 'react-redux'
+import { NEWS_LIST } from '@/assets/data.js'
+import dayjs from 'dayjs'
 
 function News () {
   const isMobile = useSelector(state => state.store.isMobile)
 
-  const target = [
-    { id: 1, time: '2022-01-10', label: '共餐平台網站建立', people: 600 },
-    { id: 2, time: '2022-01-09', label: '[徵求開伙人&搭伙人]', people: 1262 },
-    { id: 3, time: '2022-01-08', label: '家庭廚師來領獎!', people: 1735 },
-  ].map((item, index) => {
+  const target = NEWS_LIST.slice(0, 3).map((item, index) => {
     return (
       <tr
         key={ item.id }
       >
         <td><div className='w-[50px] h-[50px] flex items-center justify-center leading-none rounded-full bg-[#da7569] text-white font-bold my-[8px]'>{ index + 1 }</div></td>
-        <td className='text-center'>{ item.time }</td>
-        <td className='text-center'>{ item.label }</td>
-        <td className='text-center'>{ item.people }</td>
+        <td className='text-center'>{ dayjs(item.time).format('YYYY-MM-DD') }</td>
+        <td><span className='truncate w-[90%] block'>{ item.title }</span></td>
+        <td className='text-right'>{ item.visitors }</td>
       </tr>
     )
   })
@@ -147,7 +145,7 @@ export default function ViewNews () {
   return (
     <section className='info__wrap bg-[#f2e4d4]'>
       <div
-        className={ `info__container max-w-[1320px] mx-auto py-[60px] px-[10px] ${ !isMobile && 'grid gap-[20px] grid-cols-3' }` }
+        className={ `info__container max-w-[1220px] mx-auto py-[60px] px-[10px] ${ !isMobile && 'grid gap-[20px] grid-cols-3' }` }
       >
         <News />
         <Banner />

@@ -1,8 +1,20 @@
 export default function About () {
+  const list = [
+    '在這個忙碌的現代生活中，共同飲食扮演著一個特別的角色，不僅是填飽肚子的方式，更是一種充滿親情和溫暖的體驗。當我們坐在一桌，與家人或朋友分享美食時，那一刻讓我們感到彼此的親近與珍惜。',
+    '共同飲食是一個時刻，我們可以抛開工作的壓力，忘卻日常的煩惱，專心享受食物和彼此的陪伴。這是一個充滿歡笑和笑聲的時刻，我們可以在愉快的對話中建立更深厚的情感連結。',
+    '共同飲食也是一個表達愛意的方式。當媽媽為我們準備我們最愛的家常菜，或者當爸爸在烤肉的炭火旁教我們烹飪技巧時，那種愛的表達無需言語。這是一個互相關懷和支持的時刻，我們感到被愛包圍。',
+    '共同飲食也是一個傳承的機會。從祖母的食譜到母親的烹飪技巧，我們在共同飲食的過程中學到了家族的傳統，這是一種寶貴的遺產。這是一個我們可以傳遞給下一代的禮物，讓他們也能夠感受到這份親情和溫暖。',
+    '總之，共同飲食是一個充滿親情和溫暖的時刻，它不僅填飽了我們的胃，更充實了我們的心靈。讓我們珍惜這些特別的時刻，與家人和朋友一起共同飲食，共同創造更多充滿愛和感激的回憶。因為在共同飲食的時刻，我們不僅分享食物，還分享了愛。',
+  ].map((item, index) => (<p className='mb-[32px]' key={ index }>{ item }</p>))
   return (
-    <div className='about__wrap'>
-      <div className='about__container'>
-        About
+    <div className='about__wrap bg-[#f2e4d4] h-full'>
+      <div className='about__container max-w-[1220px] mx-auto px-[10px] py-[100px]'>
+        <section className='text-[18px] leading-10'>
+          <article>
+            <h1 className='text-[30px] font-bold mb-[40px]'>關於我們</h1>
+            { list }
+          </article>
+        </section>
       </div>
     </div>
   )

@@ -19,7 +19,7 @@ export default function banner () {
     <section
       className='banner__wrap bg-[#f2e4d4] pt-[160px] pb-[480px]'
     >
-      <div className='banner__container max-w-[1320px] mx-auto px-[10px] relative'>
+      <div className='banner__container max-w-[1220px] mx-auto px-[10px] relative'>
         <div
           className='w-[196px] absolute top-0 left-[120px] transform -rotate-24'
         >

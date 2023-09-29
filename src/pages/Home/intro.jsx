@@ -43,7 +43,7 @@ export default function intro () {
 
   return (
     <section className='intro__wrap bg-[#f2e4d4]'>
-      <div className='intro__container max-w-[1320px] mx-auto py-[60px] px-[10px]'>
+      <div className='intro__container max-w-[1220px] mx-auto py-[60px] px-[10px]'>
         <h2 className='text-[36px] text-center font-bold mb-[60px] tracking-wide'>商家介紹</h2>
         <ul>
           { target }

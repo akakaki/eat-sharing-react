@@ -29,7 +29,7 @@ export default function choice () {
 
   return (
     <section className='choice__wrap bg-cover bg-no-repeat bg-center' style={{ backgroundImage: `url(${require('./images/index_bg.png')})` }}>
-      <div className='choice__container max-w-[1320px] mx-auto py-[60px] px-[10px]'>
+      <div className='choice__container max-w-[1220px] mx-auto py-[60px] px-[10px]'>
         <h2 className='choice__title text-[36px] text-center font-bold tracking-wide'>選擇您的需求</h2>
         <article
           className={ `choice__article flex items-center justify-center mt-[60px] ${isMobile && 'flex-col'}` }

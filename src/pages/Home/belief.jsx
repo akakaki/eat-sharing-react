@@ -5,7 +5,7 @@ export default function belief () {
 
   return (
     <section className='belief__wrap  bg-[#f2e4d4]'>
-      <div className='belief__container max-w-[1320px] mx-auto py-[60px] px-[10px]'>
+      <div className='belief__container max-w-[1220px] mx-auto py-[60px] px-[10px]'>
         <div className={ `flex items-center ${ isMobile && 'flex-col'}` }>
           <img className={ `${ isMobile ? '' : 'w-[700px] h-[500px]' }` } src={ require('./images/belief.png') } alt="" />
           <article

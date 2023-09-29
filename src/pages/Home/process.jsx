@@ -34,7 +34,7 @@ export default function process () {
   })
   return (
     <section className='process__wrap bg-cover bg-no-repeat bg-center relative z-0' style={{ backgroundImage: `url(${require('./images/index_bg.png')})` }}>
-      <div className='process__container max-w-[1320px] mx-auto pt-[80px] pb-[120px] px-[10px]'>
+      <div className='process__container max-w-[1220px] mx-auto pt-[80px] pb-[120px] px-[10px]'>
         <h2 className='text-[36px] text-center font-bold mb-[60px] tracking-wide'>使用流程</h2>
         <ul className={ `flex items-center justify-between ${ isMobile && 'flex-col' }` }>
           { target }

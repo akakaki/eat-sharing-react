@@ -4,7 +4,7 @@ import ViewHeader from '@/components/Header/index.jsx'
 import ViewFooter from '@/components/Footer/index.jsx'
 
 import { useDispatch } from 'react-redux'
-import { setMobileValue } from '@/store/index.js'
+import { setMobileValue, setInfo } from '@/store/index.js'
 import { debounce } from '@/utils/index.js'
 
 export const LoginContext = createContext()
@@ -13,8 +13,8 @@ export default function App () {
   const [ loginStatus, setLoginStatus ] = useState(false)
   const dispatch = useDispatch()
 
-  // isMobile =">
   const init = () => {
+    // isMobile =">
     const action = (val = 0) => {
       dispatch(setMobileValue(/Android|webOS|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.userAgent) || (val <= 768)))
     }
@@ -30,6 +30,11 @@ export default function App () {
     })
 
     resizeWidth.observe(document.body)
+
+    // info
+    if (localStorage.getItem('token')) {
+      dispatch(setInfo())
+    }
   }
 
   init()

@@ -31,7 +31,7 @@ export default function partner () {
 
   return (
     <section className='partner__wrap bg-[#f2e4d4]'>
-      <div className='partner__container max-w-[1320px] mx-auto py-[60px] px-[10px]'>
+      <div className='partner__container max-w-[1220px] mx-auto py-[60px] px-[10px]'>
         <h2 className='text-[36px] text-center font-bold tracking-wide'>我們的夥伴</h2>
         <ul className={ `py-[80px] ${ isMobile ? 'grid grid-cols-2 gap-y-[20px] gap-x-[10px]' : 'flex justify-center' }` }>{ target }</ul>
       </div>
