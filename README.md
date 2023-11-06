@@ -6,7 +6,7 @@
 
 1. router 寫入登入狀態
 2. style 寫入 hover 行為
-3. 接入 firebase 或 notion
+3. 接入 firebase
 
 ## 相關文件與專案走向
 
