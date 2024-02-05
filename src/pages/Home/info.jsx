@@ -27,7 +27,7 @@ function News () {
         <table className='text-[24px] w-full'>
           <tbody>
             <tr className='border-b-[1px] border-[#da7569]'>
-              <th className=''></th>
+              <th></th>
               <th className='pb-[10px]'>發布時間</th>
               <th className='pb-[10px]'>標題</th>
               <th className='pb-[10px]'>點閱人數</th>
@@ -35,37 +35,6 @@ function News () {
             { target }
           </tbody>
         </table>
-      </div>
-    </article>
-  )
-}
-
-function Banner () {
-  const target = [
-    { id: 1, label: '健康減油氣炸鍋', color: '#bfc783', img: require('./images/swiper-pot.png') },
-    { id: 2, label: '新鮮食材在這裡', color: '#e0ab77', img: require('./images/swiper-vegetable.jpg') },
-  ].map(item => {
-    return (
-      <SwiperSlide key={ item.id }>
-        <img 
-          className='h-full w-full object-cover object-center h-[285px]'
-          src={ item.img }
-          alt={ item.label }
-        />
-        <p
-          className='absolute top-0 left-0 w-full h-full text-white text-[28px] font-bold flex items-center justify-center opacity-90'
-          style={{ backgroundColor: item.color }}
-        >{ item.label }</p>
-      </SwiperSlide>
-    )
-  })
-
-  return (
-    <article className='Banner__wrap'>
-      <div className='Banner__container'>
-        <Swiper>
-          { target }
-        </Swiper>
       </div>
     </article>
   )
@@ -103,42 +72,6 @@ function Fee () {
   )
 }
 
-function Team () {
-  const isMobile = useSelector(state => state.store.isMobile)
-
-  const target = [
-    { id: 0, name: 'Mason', img: require('./images/member-pic1.png') },
-    { id: 1, name: 'Aston', img: require('./images/member-pic2.png') },
-    { id: 2, name: 'Annie', img: require('./images/member-pic3.png') },
-    { id: 3, name: 'Daisy', img: require('./images/member-pic4.png') },
-  ].map(item => {
-    return (
-      <li
-        className='inline-flex flex-col items-center justify-center mx-[12px]'
-        key={ item.id }
-      >
-        <img
-          className='w-[150px] mb-[8px]'
-          src={ item.img }
-          alt={ item.name }
-        />
-        <div className='text-[24px] mb-[20px]'>{ item.name }</div>
-      </li>
-    )
-  })
-
-  return (
-    <article className={ `team__wrap bg-[#eec7ae] ${ !isMobile && 'col-span-2' }` }>
-      <div className='team__container flex flex-col items-center justify-center p-[20px]'>
-        <h2 className='team__title text-[24px] bg-[#e8dbcc] font-bold py-[8px] px-[20px] mb-[12px] tracking-wide'>團隊介紹</h2>
-        <ul className='flex items-center'>
-          { target }
-        </ul>
-      </div>
-    </article>
-  )
-}
-
 export default function ViewNews () {
   const isMobile = useSelector(state => state.store.isMobile)
 
@@ -148,9 +81,7 @@ export default function ViewNews () {
         className={ `info__container max-w-[1220px] mx-auto py-[60px] px-[10px] ${ !isMobile && 'grid gap-[20px] grid-cols-3' }` }
       >
         <News />
-        <Banner />
         <Fee />
-        <Team />
       </div>
     </section>
   )

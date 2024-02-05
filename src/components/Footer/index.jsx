@@ -34,9 +34,9 @@ function FooterContect () {
   const isMobile = useSelector(state => state.store.isMobile)
 
   const list = [
-    { id: 'address', label: '台中市豐原區中正路127號', icon: faHome },
-    { id: 'phone', label: '02-xxxx-xxxx', icon: faPhone },
-    { id: 'email', label: 'sharefood@example.com', icon: faEnvelope },
+    { id: 'address', label: '玉虹市玉虹大道 11 號 9F 之 1 室', icon: faHome },
+    { id: 'phone', label: '04-0000-0000', icon: faPhone },
+    { id: 'email', label: 'eat-sharing@example.com', icon: faEnvelope },
   ].map(item => {
     const target = 'mb-[14px]'
     return (
@@ -78,33 +78,23 @@ function FooterCommunity () {
 }
 
 function Copyright () {
+  const yearString = new Date().getFullYear()
   return (
     <div className='copyright__wrap bg-[#a1a481]'>
       <div className='copyright__container max-w-[1220px] mx-auto p-[10px] text-white text-center'>
-        Copyright © 2023 sharefood.com
+        copyright © { yearString } eat-sharing
       </div>
     </div>
   )
 }
 
 export default function Footer () {
-  const info = useSelector(state => state.store.info)
   const isMobile = useSelector(state => state.store.isMobile)
 
   return (
     <footer className='bg-[#da7569]'>
       <div className='footer__container'>
-        {
-          !Object.keys(info).length &&
-            <Link
-              className={ `max-w-full relative block bg-[#bc7c96] font-bold rounded-full text-white text-center mx-auto transform -translate-y-1/2 shadow-lg ${ isMobile ? 'text-[16px] p-[20px] mx-[10px]' : 'text-[48px] p-[50px] w-[800px] -mb-[40px]' }` }
-              to="register"
-            >立即加入我們！
-            </Link>
-        }
-        <div
-          className={ `footer__nav max-w-[1220px] mx-auto p-[10px] flex items-center justify-between ${isMobile && 'flex-col'}` }
-        >
+        <div className={ `footer__nav max-w-[1220px] mx-auto p-[10px] flex items-center justify-between ${isMobile && 'flex-col'}` }>
           <FooterMenu />
           <FooterContect />
           <FooterCommunity />

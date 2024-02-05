@@ -32,7 +32,7 @@ jobs:
           node-version: 18.16.0
           cache: 'pnpm'
       -  run: pnpm install
-      -  run: pnpm run build && node scripts/build.js
+      -  run: pnpm run build
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
